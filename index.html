@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Rouzbeh Meshkinnejad - Senior AI Researcher & Machine Learning Engineer specializing in representation learning, continual learning, and applied ML systems." />
+    <meta name="author" content="Rouzbeh Meshkinnejad" />
+
+    <title>Rouzbeh Meshkinnejad - AI Researcher & ML Engineer</title>
+
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/themes.css" />
+
+    <script defer src="js/main.js"></script>
+    <script defer src="js/form.js"></script>
+</head>
+
+<body class="theme-slate">
+
+    <div class="page-bg" aria-hidden="true"></div>
+
+    <!-- Mini-map Navigation -->
+    <nav class="mini-map" aria-label="Page sections">
+        <div class="mini-map-item" data-target="home">
+            <div class="mini-map-dot"></div>
+            <span class="mini-map-label">Home</span>
+        </div>
+        <div class="mini-map-item" data-target="focus-areas">
+            <div class="mini-map-dot"></div>
+            <span class="mini-map-label">Focus</span>
+        </div>
+        <div class="mini-map-item" data-target="research">
+            <div class="mini-map-dot"></div>
+            <span class="mini-map-label">Research</span>
+        </div>
+        <div class="mini-map-item" data-target="applied-work">
+            <div class="mini-map-dot"></div>
+            <span class="mini-map-label">Applied Work</span>
+        </div>
+        <div class="mini-map-item" data-target="education">
+            <div class="mini-map-dot"></div>
+            <span class="mini-map-label">Education</span>
+        </div>
+        <div class="mini-map-item" data-target="talks-teaching">
+            <div class="mini-map-dot"></div>
+            <span class="mini-map-label">Talks</span>
+        </div>
+        <div class="mini-map-item" data-target="honors">
+            <div class="mini-map-dot"></div>
+            <span class="mini-map-label">Honors</span>
+        </div>
+        <div class="mini-map-item" data-target="contact">
+            <div class="mini-map-dot"></div>
+            <span class="mini-map-label">Contact</span>
+        </div>
+    </nav>
+
+    <main class="page">
+
+        <!-- HEADER -->
+        <header class="header" id="home">
+            <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+
+            <div class="header-grid">
+                <div class="header-image">
+                    <img src="assets/personal-photo.jpg" alt="Portrait of Rouzbeh Meshkinnejad" />
+                </div>
+
+                <div class="header-text">
+                    <h1>Rouzbeh Meshkinnejad</h1>
+                    <p class="tagline">Senior AI Researcher & Machine Learning Engineer</p>
+                    <p class="summary">
+                        I work on representation learning, continual learning, and applied ML systems,
+                        translating research ideas into reliable, production-grade AI.
+                    </p>
+
+                    <nav class="links" aria-label="Social links">
+                        <a href="https://github.com/crouzbehmeshkin" target="_blank"
+                            rel="noopener noreferrer">GitHub</a>
+                        <a href="https://linkedin.com/in/rouzbeh-meshkinnejad" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://scholar.google.com/citations?user=0UgoPJ8AAAAJ&hl=en" target="_blank"
+                            rel="noopener noreferrer">Scholar</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- WHAT I WORK ON -->
+        <section id="focus-areas" aria-labelledby="focus-heading">
+            <h2 id="focus-heading">What I Work On</h2>
+            <ul class="bullets">
+                <li>Representation learning and continual learning for vision and multimodal systems</li>
+                <li>Large-scale training and evaluation (multi-GPU, mixed precision, Azure ML)</li>
+                <li>Applied LLM systems: retrieval, deep search agents, reasoning pipelines</li>
+                <li>ML for scientific and industrial domains (life sciences, chemistry, geoscience)</li>
+                <li>Research-to-production ML workflows and infrastructure</li>
+            </ul>
+        </section>
+
+
+        <!-- RESEARCH -->
+        <section id="research" aria-labelledby="research-heading">
+            <h2 id="research-heading">Selected Research</h2>
+
+            <article class="card research-card">
+                <div class="card-media">
+                    <a href="assets/selective-distillation.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size research diagram">
+                        <img src="assets/selective-distillation.png"
+                            alt="Look-Ahead Selective Plasticity diagram showing continual learning process"
+                            class="rotate-90" />
+                    </a>
+                </div>
+
+                <div class="card-content">
+                    <h3>Look-Ahead Selective Plasticity for Continual Learning</h3>
+                    <p class="subtitle">NeurIPS (UniReps Workshop) · 2024</p>
+
+                    <div class="card-description">
+                        <p>
+                            We propose a look-ahead selective plasticity mechanism that combines contrastive learning
+                            and distillation to reduce catastrophic forgetting in continual visual learning. By valuing
+                            features that both preserve past knowledge and transfer to new tasks, the method achieves
+                            state-of-the-art performance on CIFAR-10 and TinyImageNet. <br />
+
+                            Continual learning systems often suffer from catastrophic forgetting due to uniform
+                            parameter plasticity across tasks. In contrast, our method models learning as a sequence of
+                            events and introduces a look-ahead evaluation step to guide plasticity decisions at task
+                            transitions. <br />
+
+                            Many existing approaches estimate parameter importance solely based on past tasks, leading
+                            to overly stable solutions that gradually lose the ability to learn. Our key motivation is
+                            that features valuable for continual learning should be assessed not only by what they
+                            retain, but also by how well they transfer to future tasks. <br />
+
+                            To capture this, we introduce a look-ahead selective plasticity mechanism that uses a small
+                            number of samples from a new task to estimate the transferability of learned features. At
+                            the level of embedding neurons, we evaluate performance jointly on data from previous tasks
+                            and the first batch of the new task. Neurons that preserve performance under this joint
+                            evaluation are treated as transferable and selectively protected, while the rest of the
+                            network remains plastic. <br />
+
+                            This process is implemented through selective plasticity, using a distillation loss applied
+                            to a subset of embeddings, and gradient modulation, which dampens updates to salient
+                            parameters that contribute to both transfer and past-task performance. This design allows
+                            the model to adapt to new tasks with a larger set of free parameters, while preserving
+                            transferable features learned earlier. <br />
+
+                            Experiments on CIFAR-10 and TinyImageNet show higher average accuracy, reduced forgetting,
+                            and improved forward transfer compared to regularization- and distillation-based baselines,
+                            while maintaining competitive performance on new tasks.
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <div class="card-links">
+                        <a href="https://proceedings.mlr.press/v285/meshkinnejad24a.html" target="_blank"
+                            rel="noopener noreferrer">Paper</a>
+                        <a href="https://github.com/Crouzbehmeshkin/LASP" target="_blank"
+                            rel="noopener noreferrer">Code</a>
+                        <a href="https://neurips.cc/virtual/2024/102650" target="_blank"
+                            rel="noopener noreferrer">Project Page</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card research-card">
+                <div class="card-media">
+                    <a href="assets/neuromodulation-2.jpg" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size research diagram">
+                        <img src="assets/neuromodulation-2.jpg" alt="Neuromodulation cell activations" />
+                    </a>
+                    <a href="assets/neuromodulation-1.jpg" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size research diagram">
+                        <img src="assets/neuromodulation-1.jpg" alt="Neuromodulation model architecture" />
+                    </a>
+                </div>
+
+                <div class="card-content">
+                    <h3>Effects of Neuromodulation-Inspired Mechanisms on the Performance of Deep Neural Networks in a
+                        Spatial Learning Task</h3>
+                    <p class="subtitle">iScience · 2023</p>
+
+                    <div class="card-description">
+                        <p>
+                            We build on prior work on neuromodulation-inspired deep neural networks by examining how
+                            neuromodulatory components influence both learning behavior and single-unit activity in a
+                            spatial learning task. Within a multiscale neuromodulatory framework, plastic components,
+                            dropout probability modulation, and learning-rate decay were introduced at the single-unit,
+                            layer, and whole-network levels, respectively. <br />
+
+                            These additions led to measurable behavioral benefits, including faster learning and reduced
+                            ambulation error. Our results show that neuromodulatory components shape learning
+                            trajectories, final performance, and single-unit responses in a manner that depends on both
+                            the specific mechanism and its hyperparameters. <br />
+
+                            Rather than altering the core network architecture, neuromodulation-inspired processes were
+                            embedded as learning-time controls operating at different spatial scales. Local plasticity
+                            governed individual weight updates, adaptive dropout dynamically regulated layer-level
+                            regularization, and network-level learning-rate scheduling adjusted global optimization over
+                            time. Across both TensorFlow and PyTorch implementations, these mechanisms consistently
+                            improved convergence and task performance in an open-field spatial environment. <br />
+
+                            Analysis of fully connected layer activations revealed units with diverse spatial tuning
+                            properties, including place-like and grid-like response patterns. The emergence and
+                            expression of these patterns varied with the presence and configuration of neuromodulatory
+                            components, demonstrating that biologically inspired learning mechanisms can systematically
+                            influence internal network dynamics. <br />
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <div class="card-links">
+                        <a href="https://www.cell.com/iscience/fulltext/S2589-0042(23)00103-7">Paper</a>
+                        <a href="https://github.com/Crouzbehmeshkin/BaninoGrid-Torch">Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card research-card">
+                <div class="card-media">
+                    <a href="assets/gan-stochastic-modelling.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size research diagram">
+                        <img src="assets/gan-stochastic-modelling.png" alt="GAN Stochastic Modelling" />
+                    </a>
+                </div>
+
+                <div class="card-content">
+                    <h3>Beyond Stationary Simulation; Modern Approaches to Stochastic Modelling</h3>
+                    <p class="subtitle">Stochastic Environmental Research and Risk Assessment · 2023</p>
+
+                    <div class="card-description">
+                        <p>
+                            We study the limitations of stationary assumptions in classical stochastic simulation and
+                            explore modern alternatives that model non-stationary, evolving processes. In particular, we
+                            examine how Generative Adversarial Networks (GANs) can be used as flexible data-driven
+                            simulators for complex stochastic systems. <br />
+
+                            Traditional stochastic modelling frameworks often assume stationarity, which simplifies
+                            analysis but fails to capture the dynamics of many real-world systems whose underlying
+                            distributions evolve over time. This mismatch leads to inaccurate simulations and unreliable
+                            uncertainty estimates in practice. <br />
+
+                            Our objective is to move beyond stationary formulations by leveraging modern stochastic
+                            modelling techniques that adapt to time-varying dynamics. We analyze GAN-based approaches as
+                            a powerful alternative, where generative models learn the underlying data distribution
+                            directly and can implicitly capture non-stationary behavior without explicit parametric
+                            assumptions. <br />
+
+                            We compare GAN-based simulation with classical stochastic methods, highlighting differences
+                            in expressiveness, stability, and their ability to model regime shifts and distributional
+                            drift. The study discusses practical considerations for training and evaluating generative
+                            models in stochastic simulation settings. <br />
+
+                            Experimental results show that GAN-based approaches achieve lower distributional error and
+                            improved sample realism compared to stationary simulations, particularly in scenarios with
+                            evolving dynamics, demonstrating their effectiveness as modern tools for non-stationary
+                            stochastic modelling. <br />
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <div class="card-links">
+                        <a href="https://link.springer.com/article/10.1007/s00477-023-02497-y">Paper</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+
+        <!-- APPLIED WORK -->
+        <section id="applied-work" aria-labelledby="applied-heading">
+            <h2 id="applied-heading">Applied Systems & Industry Work</h2>
+
+            <article class="card industry-card">
+                <div class="card-media industry-media">
+                    <a href="assets/llm-deep-search-agent.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size system diagram">
+                        <img src="assets/llm-deep-search-agent.png" alt="LLM-based deep search agent architecture" />
+                    </a>
+                </div>
+
+                <div class="card-content with-bg">
+                    <div class="bg-overlay" aria-hidden="true"></div>
+
+                    <h3>Deep Search & Reasoning Agent</h3>
+                    <p class="subtitle">ALS Geoanalytics · 2025</p>
+
+                    <div class="card-description">
+                        <p>
+                            Designed and deployed a multi-step LLM-based agent capable of iterative
+                            retrieval, reasoning, and knowledge updates over external web sources. <br />
+                            The system was built for reliability, cost control, and extensibility,
+                            and integrated into internal workflows for domain experts.
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <ul class="tech-list">
+                        <li>LangChain</li>
+                        <li>LangGraph</li>
+                        <li>Azure Serverless LLM</li>
+                    </ul>
+
+                    <div class="card-links">
+                        <a href="#contact">Contact for Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card industry-card">
+                <div class="card-media industry-media">
+                    <a href="assets/kubernetes-backend-system.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size system diagram">
+                        <img src="assets/kubernetes-backend-system.png" alt="Kubernetes backend architecture" />
+                    </a>
+                </div>
+
+                <div class="card-content with-bg">
+                    <div class="bg-overlay" aria-hidden="true"></div>
+
+                    <h3>Kubernetes Backend System for Real-Time ML Inference</h3>
+                    <p class="subtitle">ALS Geoanalytics · 2025</p>
+
+                    <div class="card-description">
+                        <p>
+                            Designed a production-grade Kubernetes backend for <strong>low-latency, real-time ML
+                                inference</strong>,
+                            targeting large vision transformer models. The work focused on system architecture,
+                            scalability, and operational correctness, and was formalized in a detailed design document
+                            covering infrastructure, deployment, and runtime considerations. <br />
+                            The system was designed around Azure Kubernetes Service (AKS) and provisioned
+                            using Infrastructure as Code (Bicep), with a strict separation between infrastructure
+                            and application layers. The architecture emphasized reproducibility, environment parity, and
+                            safe iteration, enabling model teams to deploy and update inference services independently
+                            of cluster operations. <br />
+                            Key design elements included autoscaling strategies for bursty inference workloads,
+                            GPU-aware scheduling, health checks and rollout policies for zero-downtime updates, and
+                            CI/CD pipelines for containerized model services. The design also addressed observability,
+                            cost control, and security boundaries between services. While the system was not deployed to
+                            production, it was reviewed and validated as a deployment-ready architecture.
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <ul class="tech-list">
+                        <li>Kubernetes (AKS)</li>
+                        <li>Azure Container Registry</li>
+                        <li>Infrastructure as Code (Bicep)</li>
+                        <li>CI/CD Pipelines</li>
+                        <li>GPU Scheduling</li>
+                        <li>Autoscaling</li>
+                    </ul>
+
+                    <div class="card-links">
+                        <a href="#contact">Contact for Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card industry-card">
+                <div class="card-media industry-media">
+                    <a href="assets/petri-dish.jpg" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size image">
+                        <img src="assets/petri-dish.jpg" alt="Sample Classification Image" />
+                    </a>
+                </div>
+
+                <div class="card-content with-bg">
+                    <div class="bg-overlay" aria-hidden="true"></div>
+
+                    <h3>Life Science Image Classification</h3>
+                    <p class="subtitle">ALS Geoanalytics · 2023-2025</p>
+
+                    <div class="card-description">
+                        <p>
+                            Led the end-to-end design, implementation, and deployment of a large-scale image
+                            classification system for life science data, transforming a largely manual inspection
+                            workflow into an automated, ML-driven pipeline. The system scaled from a small unlabeled
+                            dataset to <strong>2+ million high-resolution images</strong> while maintaining
+                            production-level performance and reliability. <br />
+
+                            The project began with limited labeled data, where manual annotation was prohibitively
+                            expensive. The task was to design a pipeline that could bootstrap supervision, scale
+                            efficiently, and
+                            deliver high-accuracy predictions suitable for downstream operational use.
+                            To address this, we introduced a pseudo-labeling strategy using classical image
+                            processing techniques (OpenCV) to generate initial labels from raw imagery. A custom web
+                            application was designed and deployed to visualize the pseudo-labeling process and enable
+                            domain experts to validate and refine annotations. All data and annotations were versioned
+                            and stored in Azure Blob Storage, enabling reproducible training at scale. <br />
+
+                            Model development initially relied on ResNet-based architectures, and later transitioned to
+                            <strong>DINOv2</strong> as dataset scale and diversity increased. Training
+                            was optimized using <strong>Distributed Data Parallel (DDP)</strong> on Azure Machine
+                            Learning with mixed-precision training as well as experimenting with
+                            <code>torch.compile</code> backends and CUDA graphs, reducing epoch time from <strong>~100
+                                hours to ~7 hours on 16 T4 GPUs</strong> (≈14x speedup). <br />
+
+                            After approximately two weeks of training, the system achieved
+                            <strong>&gt;93% accuracy on high-resolution images</strong> and
+                            <strong>&gt;99% accuracy on small tile images</strong>. The model was deployed in a
+                            validation environment using Azure Batch, Logic Apps, and on-premises upload
+                            services, enabling seamless integration with existing workflows.
+                            This solution replaced a costly manual review process, resulting in
+                            <strong>over $100K in annual operational savings</strong>.
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <ul class="tech-list">
+                        <li>PyTorch</li>
+                        <li>Distributed Data Parallel (DDP)</li>
+                        <li>Mixed Precision Training</li>
+                        <li>torch.compile</li>
+                        <li>CUDA Graphs</li>
+                        <li>Azure Machine Learning</li>
+                        <li>MLflow</li>
+                        <li>Azure Blob Storage</li>
+                        <li>Azure Batch</li>
+                        <li>Logic Apps</li>
+                        <li>OpenCV</li>
+                        <li>DINOv2</li>
+                        <li>ResNet</li>
+                        <li>Streamlit</li>
+                    </ul>
+
+                    <div class="card-links">
+                        <a href="#contact">Contact for Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card industry-card">
+                <div class="card-media industry-media">
+                    <a href="assets/chemical-process-optimization.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size system diagram">
+                        <img src="assets/chemical-process-optimization.png"
+                            alt="Chemical process optimization with ML workflow" />
+                    </a>
+                </div>
+
+                <div class="card-content with-bg">
+                    <div class="bg-overlay" aria-hidden="true"></div>
+
+                    <h3>Chemistry Process Optimization with Machine Learning</h3>
+                    <p class="subtitle">ALS Geoanalytics · 2023-2025</p>
+
+                    <div class="card-description">
+                        <p>
+                            Enhanced a mature industrial chemical process by introducing a machine-learning layer to
+                            improve consistency and efficiency. The work focused on extracting incremental gains from
+                            large-scale operational data without altering core process mechanics. <br />
+                            While the existing process performed reliably, measurable variability remained across
+                            environments and operating conditions. The objective was to design a data-driven system that
+                            could identify subtle patterns in historical data and support improved outcomes at scale.
+                            <br />
+                            Performed extensive exploratory analysis on 10M+ tabular records, engineered features, and
+                            trained deep learning models using PyTorch. Established reproducible experimentation and
+                            model tracking with Azure Machine Learning and MLflow, and integrated the models into a
+                            semi-automated workflow suitable for global laboratory environments. <br />
+                            Achieved >90% predictive accuracy in production use, contributing to $500K+ in annualized
+                            savings through improved success rates and operational efficiency across deployed sites.
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <ul class="tech-list">
+                        <li>PyTorch</li>
+                        <li>Azure Machine Learning</li>
+                        <li>MLflow</li>
+                        <li>Dask</li>
+                        <li>Pandas</li>
+                    </ul>
+
+                    <div class="card-links">
+                        <a href="#contact">Contact for Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card industry-card">
+                <div class="card-media industry-media">
+                    <a href="assets/physical-inversion-optimization.jpg" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size system diagram">
+                        <img src="assets/physical-inversion-optimization.jpg"
+                            alt="Stochastic Physical Inversion Optimization on GPU" />
+                    </a>
+                </div>
+
+                <div class="card-content with-bg">
+                    <div class="bg-overlay" aria-hidden="true"></div>
+
+                    <h3>Optimization of Stochastic Physical Inversion</h3>
+                    <p class="subtitle">GoldSpot Discoveries Ltd. · 2022-2023</p>
+
+                    <div class="card-description">
+                        <p>
+                            Redesigned and accelerated large-scale stochastic inversion workflows for geophysical
+                            signals by re-architecting computation to run efficiently on GPUs. The system preserves
+                            physically accurate forward modeling while enabling fast, practical exploration of ill-posed
+                            inverse problems. <br />
+                            In geophysical modeling, the forward process (i.e. observable signals such as gravity or
+                            electromagnetic responses from a known 3D subsurface property mesh) is deterministic and
+                            well-defined. The inverse problem, however, is inherently ill-posed: multiple subsurface
+                            configurations can explain the same 2D observations, requiring stochastic and iterative
+                            optimization over high-dimensional parameter spaces. Existing inversion workflows relied on
+                            legacy CPU-based software, making large-scale experimentation prohibitively slow. <br />
+                            I optimized the inversion pipeline by implementing GPU-native execution for the stochastic
+                            components, introducing lazy evaluation for high-dimensional tensor operations, and
+                            restructuring numerical kernels to maximize parallelism and memory efficiency without
+                            modifying the underlying physical models. Custom infrastructure supported scalable
+                            experimentation across different inversion setups while ensuring numerical stability and
+                            reproducibility. <br />
+                            The resulting system reduced end-to-end inversion runtime by ~12x, from ~8 hours to minutes,
+                            enabling domain experts to iterate rapidly over inversion configurations and significantly
+                            improving the practicality of advanced inversion techniques in real-world research
+                            workflows.
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <ul class="tech-list">
+                        <li>PyTorch</li>
+                        <li>KeOps</li>
+                        <li>GPyTorch</li>
+                    </ul>
+
+                    <div class="card-links">
+                        <a href="#contact">Contact for Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card industry-card">
+                <div class="card-media industry-media">
+                    <a href="assets/3d-inversion.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size system diagram">
+                        <img src="assets/3d-inversion.png" alt="3D Deep GeoPhysical Inversion" />
+                    </a>
+                </div>
+
+                <div class="card-content with-bg">
+                    <div class="bg-overlay" aria-hidden="true"></div>
+
+                    <h3>3D Subsurface Modeling with Deep Learning and Physical Simulations</h3>
+                    <p class="subtitle">GoldSpot Discoveries Ltd. · 2022-2023</p>
+
+                    <div class="card-description">
+                        <p>
+                            Developed deep learning models to predict 3D subsurface structures from 2D geophysical
+                            observations. Combined physical modeling with data-driven approaches to enhance mineral
+                            exploration accuracy. <br />
+
+                            Leveraging a hybrid of CNN-LSTM, pure LSTM, and Transformer architectures, alongside
+                            traditional ML baselines (Random Forests, XGBoost), we addressed the inverse problem of
+                            reconstructing subsurface properties from gravity, electromagnetic, and volumetric datasets.
+                            Data was generated both from the forward physical process and via FastGAN to augment limited
+                            observations. The models were trained to map 2D signals to 3D representations, enabling
+                            accurate and scalable predictions of mineral deposits. This work integrated physical
+                            insight, generative modeling, and deep learning to improve predictive performance and
+                            efficiency of real-world exploration applications.
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <ul class="tech-list">
+                        <li>Long Short Term Memory (LSTM)</li>
+                        <li>Seq2Seq with Attention</li>
+                        <li>CNN-LSTM</li>
+                        <li>Inverse Modelling</li>
+                        <li>Random Forest</li>
+                        <li>XGBoost</li>
+                    </ul>
+
+                    <div class="card-links">
+                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S0926985125001181">Related
+                            Work</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card industry-card">
+                <div class="card-media industry-media">
+                    <a href="assets/satellite-image-segmentation.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size system diagram">
+                        <img src="assets/satellite-image-segmentation.png"
+                            alt="Satellite Imagery Segmentation Diagram" />
+                    </a>
+                </div>
+
+                <div class="card-content with-bg">
+                    <div class="bg-overlay" aria-hidden="true"></div>
+
+                    <h3>Semi-Supervised Deep Learning for Satellite Imagery Segmentation</h3>
+                    <p class="subtitle">GoldSpot Discoveries Ltd. · 2022-2023</p>
+
+                    <div class="card-description">
+                        <p>
+                            Developed a semi-supervised deep learning pipeline to segment high-resolution satellite
+                            imagery with limited human-annotated labels. Demonstrated a scalable approach for
+                            integrating automated segmentation into geoscientific workflows. <br />
+
+                            Using ResNet-18 as the backbone, I applied a combination of semi-supervised
+                            methods—including consistency regularization and pseudo-labeling—to maximize performance
+                            under scarce annotations. Large raster images were read, tiled, segmented, and stitched into
+                            high-resolution maps, with evaluation via accuracy and Intersection-over-Union (IoU). While
+                            initially serving as a proof-of-concept, the project validated the feasibility of automated
+                            segmentation for domain experts and provided a foundation for further development toward
+                            reliable satellite image analysis.
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <ul class="tech-list">
+                        <li>ResNet-18</li>
+                        <li>PyTorch</li>
+                        <li>Semi-Supervised Learning</li>
+                        <li>Sentinel-2</li>
+                        <li>Sattelite Imagery</li>
+                        <li>Google Earth</li>
+                        <li>Rasterio</li>
+                    </ul>
+
+                    <div class="card-links">
+                        <a href="https://arxiv.org/abs/1709.00029">Related Dataset</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card industry-card">
+                <div class="card-media industry-media">
+                    <a href="assets/DoubleA.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size system diagram">
+                        <img src="assets/DoubleA.png"
+                            alt="DoubleA: Embedding Augmentation for Pretrained Language Models" />
+                    </a>
+                </div>
+
+                <div class="card-content with-bg">
+                    <div class="bg-overlay" aria-hidden="true"></div>
+
+                    <h3>DoubleA: Controllable Embedding Augmentation for Pretrained Language Models</h3>
+                    <p class="subtitle">BSc Thesis · 2021</p>
+
+                    <div class="card-description">
+                        <p>
+                            Proposed a novel embedding-level data augmentation method for transformer-based language
+                            models, enabling flexible and controllable generation of synthetic training samples.
+                            Designed to improve generalization in low-resource NLP settings. <br />
+
+                            I introduced DoubleA, an embedding augmentation framework that operates directly in the
+                            representation space of pretrained models (BERT), addressing the limitations of word-level
+                            text augmentation. The method combines lightweight word-level perturbations with a
+                            latent-space modeling approach using SVD and Gaussian sampling to generate arbitrarily many
+                            augmented embeddings with tunable strength. DoubleA was evaluated on a downstream IMDb
+                            sentiment classification task, where it consistently outperformed standard augmentation
+                            baselines (EDA, E-Mixup, E-Stitchup) and achieved modest but reliable gains over no
+                            augmentation (≈+3% accuracy relative to other augmentation methods). This work demonstrates
+                            how controllable embedding-space augmentation can enhance robustness and generalization
+                            while remaining computationally efficient and compatible with semi-supervised learning
+                            pipelines.
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <ul class="tech-list">
+                        <li>PyTorch</li>
+                        <li>Hugging Face</li>
+                        <li>BERT</li>
+                        <li>IMDb Sentiment Classification</li>
+                    </ul>
+
+                    <div class="card-links">
+                        <a
+                            href="https://github.com/Crouzbehmeshkin/DoubleA/blob/master/report/AI2_Project_FinalReport.pdf">Report</a>
+                        <a href="https://github.com/Crouzbehmeshkin/DoubleA/tree/master">Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card industry-card">
+                <div class="card-media industry-media">
+                    <a href="assets/stock-prediction.png" target="_blank" rel="noopener noreferrer"
+                        aria-label="View full-size system diagram">
+                        <img src="assets/stock-prediction.png"
+                            alt="Stock Prediction Via Sentiment Analysis and Hybrid Deep Learning Models" />
+                    </a>
+                </div>
+
+                <div class="card-content with-bg">
+                    <div class="bg-overlay" aria-hidden="true"></div>
+
+                    <h3>Stock Prediction Via Sentiment Analysis and Hybrid Deep Learning Models</h3>
+                    <p class="subtitle">Western University · 2021</p>
+
+                    <div class="card-description">
+                        <p>
+                            Developed a hybrid modeling framework that combines historical stock price data with
+                            sentiment signals extracted from StockTwits messages to predict short-term stock price
+                            movements. The project investigated whether social-media-driven sentiment provides
+                            complementary information beyond price-only models. <br />
+                            The project implemented a pipeline that jointly modeled financial time-series data and
+                            sentiment derived from stock-related tweets collected from StockTwits. Sentiment features
+                            were extracted using a BERT-based classifier trained on domain-specific text, while price
+                            dynamics were modeled using neural networks operating on historical price windows and
+                            technical indicators. These components were integrated into a hybrid architecture to
+                            evaluate the impact of sentiment signals on downstream prediction tasks. Models were
+                            evaluated on real-world stock and tweet datasets using regression and classification
+                            metrics. Results showed that incorporating sentiment information led to more stable
+                            predictions and modest performance improvements under certain conditions, while also
+                            revealing challenges related to noise, timing alignment, and variability in social sentiment
+                            signals.
+                        </p>
+                    </div>
+
+                    <button class="expand-btn" aria-label="Expand description">
+                        <span class="expand-text">Expand</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6l4 4 4-4" />
+                        </svg>
+                    </button>
+
+                    <ul class="tech-list">
+                        <li>PyTorch</li>
+                        <li>Convolutional Neural Networks</li>
+                        <li>Recurrent Neural Networks</li>
+                        <li>LSTM</li>
+                        <li>Sentiment Analysis</li>
+                        <li>BERT</li>
+                        <li>Huggingface</li>
+                    </ul>
+
+                    <div class="card-links">
+                        <a
+                            href="https://github.com/sepehrasgarian/Stock-Prediction-/blob/main/Report/Report.pdf">Report</a>
+                        <a href="https://github.com/Crouzbehmeshkin/Stock-Prediction-">Code</a>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- EDUCATION -->
+        <section id="education" aria-labelledby="education-heading">
+            <h2 id="education-heading">Education</h2>
+            <p><strong>MSc, Computer Science</strong> — Western University (4.0/4.0)</p>
+            <p><strong>BSc, Computer Engineering</strong> — Sharif University of Technology (18.88/20)</p>
+        </section>
+
+
+        <!-- TALKS -->
+        <section id="talks-teaching" aria-labelledby="talks-heading">
+            <h2 id="talks-heading">Talks & Teaching</h2>
+
+            <article class="card talk-card">
+                <div class="talk-meta">
+                    <h3>Look-Ahead Selective Plasticity for Continual Learning of Visual Tasks</h3>
+                    <p class="location">Poster Presentation</p>
+                    <p class="location">NeurIPS (UniReps Workshop), 2024</p>
+                </div>
+
+                <div class="talk-links">
+                    <a href="https://neurips.cc/media/PosterPDFs/NeurIPS%202024/102650.png?t=1733549734.494943"
+                        target="_blank" rel="noopener noreferrer">View Poster</a>
+                </div>
+            </article>
+
+            <article class="card talk-card">
+                <div class="talk-meta">
+                    <h3>Look-Ahead Selective Plasticity for Continual Learning of Visual Tasks</h3>
+                    <p class="location">Inited Talk</p>
+                    <p class="location">University of Tokyo, 2024</p>
+                </div>
+            </article>
+
+            <article class="card talk-card">
+                <div class="talk-meta">
+                    <h3>The effects of neuromodulation-inspired mechanisms on learning in an open field navigation task
+                    </h3>
+                    <p class="location">Poster Presentation</p>
+                    <p class="location">Robarts Institute, Western University, 2023</p>
+                </div>
+            </article>
+
+            <article class="card talk-card">
+                <div class="talk-meta">
+                    <h3>EM-PRISE: a Tool for Anomaly Analysis and One-dimensional Inversion of Electromagnetic Data</h3>
+                    <p class="location">Oral Presentation</p>
+                    <p class="location">KEGS PDAC Electromagnetic Mini-Symposium, 2022</p>
+                </div>
+            </article>
+
+            <article class="card talk-card">
+                <div class="talk-meta">
+                    <h3>Teaching Assistant Work</h3>
+                    <p class="location">Fundumentals of Programming II, Artificial Intelligence (2x), Probability and
+                        Statistics, Data Structures and Algorithms, Data Transmission</p>
+                </div>
+            </article>
+        </section>
+
+
+        <!-- HONORS -->
+        <section id="honors" aria-labelledby="honors-heading">
+            <h2 id="honors-heading">Background & Distinctions</h2>
+
+            <div class="honors-list">
+                <div class="honor-item">
+                    <div class="honor-content">
+                        <p>Recipient of <strong>Vector Institute Scholarship in AI</strong></p>
+                    </div>
+                    <span class="honor-year">2021</span>
+                </div>
+                <div class="honor-item">
+                    <div class="honor-content">
+                        <p><strong>Top 0.1%</strong> — Ranked 89th nationally in the university entrance exam among
+                            137,788 participants</p>
+                    </div>
+                    <span class="honor-year">2017</span>
+                </div>
+
+                <div class="honor-item">
+                    <div class="honor-content">
+                        <p><a href="https://usaco.org/" target="_blank" rel="noopener noreferrer">
+                                USA Computing Olympiad</a> — advanced to <strong>Gold Division</strong> (<a
+                                href="https://codeforces.com/profile/CaptainRouzbeh" target="_blank"
+                                rel="noopener noreferrer">CodeForces Profile</a>)</p>
+                    </div>
+                    <span class="honor-year">2015</span>
+                </div>
+
+                <div class="honor-item">
+                    <div class="honor-content">
+                        <p>Selected as a member of Iran's national team to participate in the International Mathematics
+                            Competition (IMC)</p>
+                    </div>
+                    <span class="honor-year">2012</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- CONTACT -->
+        <div class="section-bleed">
+            <section id="contact" aria-labelledby="contact-heading">
+                <h2 id="contact-heading">Contact</h2>
+
+                <form class="contact-form" method="POST"
+                    action="https://personal-site-contact-form-production.rouzyd.workers.dev" aria-label="Contact form">
+
+                    <div class="hp-field" aria-hidden="true">
+                        <label>
+                            Company
+                            <input type="text" name="company" tabindex="-1" autocomplete="off" />
+                        </label>
+                    </div>
+
+                    <div class="form-row">
+                        <label>
+                            First name
+                            <input type="text" name="first_name" required aria-required="true" />
+                        </label>
+                        <label>
+                            Last name
+                            <input type="text" name="last_name" required aria-required="true" />
+                        </label>
+                    </div>
+
+                    <label>
+                        Email
+                        <input type="email" name="email" required autocomplete="email" aria-required="true" />
+                    </label>
+
+                    <label>
+                        Message
+                        <textarea name="message" rows="5" required aria-required="true"></textarea>
+                    </label>
+
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                    <button type="submit">Send message</button>
+                </form>
+            </section>
+        </div>
+
+
+        <!-- FOOTER -->
+        <footer class="footer" role="contentinfo">
+            <p>© 2026 Rouzbeh Meshkinnejad</p>
+        </footer>
+
+    </main>
+
+</body>
+
+</html>
