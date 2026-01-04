@@ -936,7 +936,9 @@
                     <div class="hp-field" aria-hidden="true">
                         <label>
                             Company
-                            <input type="text" name="contact_me_by_fax_only" tabindex="-1" autocomplete="new-password" />
+                            <input type="text" name="contact_me_by_fax_only" tabindex="-1" autocomplete="off"
+                                readonly
+                                onfocus="this.removeAttribute('readonly');" />
                         </label>
                     </div>
 
